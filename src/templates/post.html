@@ -1,0 +1,19 @@
+<article class="post">
+    <section>
+        <p>Post ID: <%= post.id %></p>
+        <p>Post type: <%= post.type %></p>
+        <p>Post URL: <%= post.post_url %></p>
+        <p>Post data keys: <%- _.keys(post).join(', ') %></p>
+    </section>
+    <hr/>
+
+    <% if (post.title) { %>
+        <h1 class="post-title"><%- post.title %></h1>
+    <% } %>
+
+    <% if (post.caption || post.body) { %>
+        <section class="post-content">
+            <%= post.caption || post.body || '' %>
+        </section>
+    <% } %>
+</article>

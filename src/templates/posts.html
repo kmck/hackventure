@@ -1,0 +1,10 @@
+<h1><%- total_posts %> <%- total_posts === 1 ? 'post' : 'posts' %>:</h1>
+
+<section class="posts">
+<% _.forEach(posts, function(post) { %>
+    <%= postTemplate({
+        blog: blog,
+        post: post,
+    }) %>
+<% }) %>
+</section>
