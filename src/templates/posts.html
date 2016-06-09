@@ -1,4 +1,13 @@
-<h1><%- total_posts %> <%- total_posts === 1 ? 'post' : 'posts' %>:</h1>
+<header>
+    <h1>Here are a bunch of posts from Tumblr:</h1>
+
+    <section class="debug-info">
+        <p>Blog title: <%= blog.title %></p>
+        <p>Blog name: <%= blog.name %></p>
+        <p>Blog URL: <%= blog.url %></p>
+        <p>Blog data keys: <%- _.keys(blog).join(', ') %></p>
+    </section>
+</header>
 
 <section class="posts">
 <% _.forEach(posts, function(post) { %>

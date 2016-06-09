@@ -27,6 +27,11 @@ const server = new WebpackDevServer(webpack(webpackConfig), {
 
 server.listen(3000, 'localhost', function() {
     console.log('Frontend server listening on port 3000!');
+    setTimeout(function() {
+        console.log('');
+        console.log('Go to http://localhost:3000/main in your web browser');
+        console.log('');
+    }, 100);
 });
 
 // Backend server
@@ -36,8 +41,8 @@ app.listen(8080, function() {
 });
 
 app.get('/posts', function(req, res) {
-    client.blogPosts('staff', {
-        filter: 'safe',
+    client.blogPosts('staff', { // this is the name of the blog to grab posts from
+        filter: 'safe', // this filters the HTML
     }, function(err, resp) {
         if (err) {
             throw new Error(err);

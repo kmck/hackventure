@@ -1,14 +1,13 @@
 <article class="post">
-    <section>
-        <p>Post ID: <%= post.id %></p>
-        <p>Post type: <%= post.type %></p>
-        <p>Post URL: <%= post.post_url %></p>
-        <p>Post data keys: <%- _.keys(post).join(', ') %></p>
-    </section>
-    <hr/>
 
     <% if (post.title) { %>
         <h1 class="post-title"><%- post.title %></h1>
+    <% } %>
+
+    <% if (post.type ==='photo') { %>
+        <figure class="post-image">
+            <img src="<%- post.photos[0].original_size.url %>" alt=""/>
+        </figure>
     <% } %>
 
     <% if (post.caption || post.body) { %>
@@ -16,4 +15,12 @@
             <%= post.caption || post.body || '' %>
         </section>
     <% } %>
+
+    <section class="debug-info">
+        <p>Post ID: <%= post.id %></p>
+        <p>Post type: <%= post.type %></p>
+        <p>Post URL: <%= post.post_url %></p>
+        <p>Post data keys: <%- _.keys(post).join(', ') %></p>
+    </section>
+
 </article>

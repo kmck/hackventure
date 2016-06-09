@@ -1,8 +1,25 @@
 const request = require('browser-request');
+const filter = require('lodash/filter');
+const includes = require('lodash/includes');
 
 const styles = require('./styles.scss');
 const postsTemplate = require('./templates/posts.html');
 const postTemplate = require('./templates/post.html');
+
+/**
+ * This function filters out posts that we don't want
+ *
+ * For this example, we're limiting it to certain post types.
+ */
+function filterPosts(posts) {
+    return filter(posts, function(post) {
+        return includes([
+            'text',
+            'chat',
+            'photo',
+        ], post.type);
+    });
+}
 
 request({
     method: 'GET',
@@ -14,8 +31,7 @@ request({
     } else {
         document.body.innerHTML = postsTemplate({
             blog: body.blog,
-            posts: body.posts,
-            total_posts: body.total_posts,
+            posts: filterPosts(body.posts),
             postTemplate: postTemplate,
         });
     }

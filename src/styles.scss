@@ -4,6 +4,9 @@ $color-tumblr-blue: #36465d;
 $color-neat-blue: #529ecc;
 
 $font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+$font-size-body: 14px;
+$font-size-header: 30px;
+$font-size-subheader: 20px;
 
 $border-radius-post: 3px;
 $color-post-background: $color-white;
@@ -16,10 +19,22 @@ body {
     background-color: $color-tumblr-blue;
     color: $color-white;
     font-family: $font-family;
+    font-size: $font-size-body;
 }
 
 a {
     color: $color-neat-blue;
+}
+
+.debug-info {
+    // display: none;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ff00ff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #666666;
+    font-size: smaller;
 }
 
 .post {
@@ -34,8 +49,47 @@ a {
     color: $color-post-text;
 }
 
+.post-image {
+    margin-left: -$padding-post;
+    margin-right: -$padding-post;
+
+    img {
+        width: 100%;
+    }
+}
+
+.post-title {
+    font-size: $font-size-header;
+}
+
 .post-content {
     img {
         max-width: 100%;
+    }
+
+    pre,
+    blockquote,
+    figure,
+    p {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 2px solid rgba($color-black, 0.17);
+        padding-left: 18px;
+    }
+
+    h1,
+    h2 {
+        font-size: $font-size-subheader;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: $font-size-body;
     }
 }
