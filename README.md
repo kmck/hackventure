@@ -32,7 +32,7 @@ Now you can open `hackventure` in your text editor or IDE and get to work!
 
 ## API Credentials
 
-You'll need to create a `credentials.json` file with your Tumblr API keys to make API requests. During the workshop, you can use [https://tumblr-hackventure.herokuapp.com/](this tool) to generate credentials. The file will end up looking something like this:
+You'll need to create a `credentials.json` file with your Tumblr API keys to make API requests. During the workshop, you can use [this tool](https://tumblr-hackventure.herokuapp.com/) to generate credentials. The file will end up looking something like this:
 
 ```json
 {
