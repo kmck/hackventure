@@ -1,11 +1,15 @@
-# Hackventure Challenges
+# Challenges
+
+For **frontend** changes (JS, CSS, and templates in `src`), the Webpack server will rebuild changes automatically, and all you need to do is **reload the browser**.
+
+For **backend** changes (`server.js`), you'll need to **restart the server**. Use `ctrl + C` to stop the server, and then start it again using `npm start`. After it's started, you can **reload the browser**.
 
 ## Change the source of the posts being displayed
 
-**Note:** For these challenges, you'll have to restart the server and refresh the browser to see your changes.
+**Note:** These are backend changes that will require you to restart the server and refresh the browser to see your changes.
 
-1. Change the Tumblr API call to take posts from your own blog instead of [the staff blog](https://staff.tumblr.com).
-2. Change the Tumblr API call to find posts tagged with something you're really interested in, like "puppies."
+1. Change the Tumblr API call to take posts from your own blog (or anything else you think is interesting!) instead of [the staff blog](https://staff.tumblr.com).
+2. Change the Tumblr API call to find posts tagged with something you're really interested in, like "puppies." You may notice that using the tagged posts endpoint breaks the app. That's because the format of the API response isn't the same, so you'll need to tweak the data to fit in the templates OR update the templates to handle this API response.
 
 ## Change the way things look
 
@@ -26,4 +30,4 @@
 
 ## Extra super hard challenge
 
-1. There are obviously tons more posts on Tumblr than the single page displayed in this demo. Add support for scrolling through and loading more posts!
+1. There are obviously tons more posts on Tumblr than the single page displayed in this demo. Add support for scrolling through and loading more posts! You'll need to keep track of the page you're on using the timestamp of the last post and use that to choose which posts to load from the Tumblr API.
