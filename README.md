@@ -24,7 +24,7 @@ If you are bringing your own laptop, some requirements:
 
 The easiest way to get set up is to grab the code from GitHub. In the terminal, do the following.
 
-1. `git clone git@github.com:kmck/hackventure.git` to get the code
+1. `git clone https://github.com/kmck/hackventure.git` to get the code
 2. `cd hackventure`
 3. `npm install` to get the various Node dependencies
 
